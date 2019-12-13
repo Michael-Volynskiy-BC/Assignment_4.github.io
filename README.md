@@ -25,7 +25,7 @@ Brooklyn College
 An example of the final output is a static website with different elements: image, text, link(s).
 
 - This is a barebones example \
-<img src="Barebones Example.png" align="center" /> \
+<img src="Barebones Example.png" align="center" />
 
 -This is a stylized example \
 <img src="Stylized Example.png" align="center" />
