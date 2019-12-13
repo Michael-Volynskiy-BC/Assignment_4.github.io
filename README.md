@@ -22,7 +22,8 @@ Brooklyn College
       - Can you find the value of each word? Of the top words? This would involve researching sales and calculating price per word.
 
 ### Sample Output:
-An example of the final output is a static website with different elements: image, text, link(s). \
+An example of the final output is a static website with different elements: image, text, link(s).
+
 
 - This is a barebones example 
 <img src="Barebones Example.png" align="center" />
