@@ -26,10 +26,10 @@ import tech.tablesaw.plotly.traces.HistogramTrace;
 public class App {  
     public static void main(String[] args) throws IOException {     // Thrown exception for if a file is not found
         System.out.println("App: Execution has begun");
-        Scanner sc = new Scanner(new File(/*The absolute path in which the text file of the lyrics is located*/"C:\\Users\\Roxas\\Desktop\\Assignment_4\\lyrics.txt"));       // File object passed to a Scanner
-        PrintWriter pw = new PrintWriter(/*The absolute path in which the formatted output will be located*/"C:\\Users\\Roxas\\Desktop\\Assignment_4\\output.txt");         // PrintWriter creates a file with the finalized output
-        PrintWriter pw2 = new PrintWriter(/*The absolute path in which the formatted output will be located*/"C:\\Users\\Roxas\\Desktop\\Assignment_4\\graph.txt");
-        PrintWriter wordCloudTxt = new PrintWriter("C:\\Users\\Roxas\\Desktop\\Assignment_4\\wordCloudTxt.txt");
+        Scanner sc = new Scanner(new File(/*The absolute path in which the text file of the lyrics is located*/"Txt Files\\lyrics.txt"));       // File object passed to a Scanner
+        PrintWriter pw = new PrintWriter(/*The absolute path in which the formatted output will be located*/"output.txt");         // PrintWriter creates a file with the finalized output
+        PrintWriter pw2 = new PrintWriter(/*The absolute path in which the formatted output will be located*/"Txt Files\\graph.txt");
+        PrintWriter wordCloudTxt = new PrintWriter("Txt Files\\wordCloudTxt.txt");
         ArrayList<String> wordList = new ArrayList<String>();       // the list that will be populated with the words in the file
         ArrayList<String> outputList = new ArrayList<String>();     // a formatted list with the intended output structure
 
@@ -58,7 +58,7 @@ public class App {
         
         pw.close();     // PrintWriter is closed
 
-        CsvReadOptions.Builder builder = CsvReadOptions.builder("C:\\Users\\Roxas\\Desktop\\Assignment_4\\graph.txt").separator(':').header(false);
+        CsvReadOptions.Builder builder = CsvReadOptions.builder("Txt Files\\graph.txt").separator(':').header(false);
 
         CsvReadOptions options = builder.build();
         Table myTable = Table.read().usingOptions(options);
@@ -77,7 +77,7 @@ public class App {
         frequencyAnalyzer.setWordFrequenciesToReturn(300);
         frequencyAnalyzer.setMinWordLength(1);
 
-        final List<WordFrequency> wordFrequencies = frequencyAnalyzer.load(/*The absolute path in which the generated text for the word cloud is located*/"C:\\Users\\Roxas\\Desktop\\Assignment_4\\wordCloudTxt.txt");
+        final List<WordFrequency> wordFrequencies = frequencyAnalyzer.load(/*The absolute path in which the generated text for the word cloud is located*/"Txt Files\\wordCloudTxt.txt");
         final Dimension dimension = new Dimension(1200, 600);
         final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.PIXEL_PERFECT);
         
@@ -132,7 +132,7 @@ public class App {
     // , it will be replaced by "null"
     public static String removeStopWords(String input) throws IOException {
         ArrayList<String> stopWordList = new ArrayList<String>();
-        Scanner sc = new Scanner(new File("C:\\Users\\Roxas\\Desktop\\Assignment_4\\stopwords.txt"));
+        Scanner sc = new Scanner(new File("Txt Files\\stopwords.txt"));
 
         while (sc.hasNext()) {
             String word = sc.next().replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
