@@ -26,7 +26,7 @@ An example of the final output is a static website with different elements: imag
 
 
 - This is a barebones example 
-<img src="Barebones Example.png" align="center" />
+<img src="Extra Files/Barebones Example.png" align="center" />
 
 - This is a stylized example 
-<img src="Stylized Example.png" align="center" />
+<img src="Extra Files/Stylized Example.png" align="center" />
