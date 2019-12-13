@@ -1,0 +1,440 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie = edge">
+
+    <style type="text/css" media="screen">
+        html {
+            background: linear-gradient(#7e7e7e, #1f1f1f) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        body {
+            font-family: verdana, sans-serif;
+            /*color: rgb(255, 255, 255);*/
+            /* #666 */
+            padding: 2rem;
+            height: 100%;
+            text-align: center;
+        }
+
+        .sketchy {
+            /* padding: 4rem 8rem; */
+            padding: 2px 2px;
+            display: inline-block;
+            border: 3px solid #333333;
+            font-size: 2.5rem;
+            border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+            text-transform: uppercase;
+            letter-spacing: 0.3ch;
+            background: transparent;
+            position: relative;
+        }
+
+        .sketchy::before {
+            content: "";
+            border: 2px solid #353535;
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+            transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+            border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+        }
+
+        .fire {
+            margin: 10px auto;
+            width: 80%;
+            max-width: 1000px;
+            height: 200px;
+
+            background-position: center center;
+            background-size: 1000px 200px;
+            border-radius: 10px;
+            font-family: 'Akronim';
+            overflow: hidden;
+            text-align: center;
+            vertical-align: middle;
+
+        }
+
+        .fire:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        .Blazing {
+            display: inline-block;
+            margin: 0;
+            color: aqua;
+            font-size: 100px;
+            line-height: 50px;
+            min-width: 50px;
+            outline: none;
+            vertical-align: middle;
+
+            text-shadow:
+                0 3px 20px blue,
+                0 0 20px blue,
+                0 0 10px rgb(48, 148, 230),
+                4px -5px 6px aqua,
+                -4px -10px 10px aqua,
+                0 -10px 30px aqua;
+            animation: 2s Blazing infinite alternate linear;
+        }
+
+        @keyframes Blazing {
+            0% {
+                text-shadow: 0 3px 20px blue, 0 0 20px blue,
+                    0 0 10px rgb(48, 148, 230),
+                    0 0 0 aqua,
+                    0 0 5px aqua,
+                    -2px -5px 5px aqua,
+                    4px -10px 10px aqua;
+            }
+
+            25% {
+                text-shadow: 0 3px 20px blue, 0 0 30px blue,
+                    0 0 20px rgb(48, 148, 230),
+                    0 0 5px aqua,
+                    -2px -5px 5px aqua,
+                    3px -10px 10px aqua,
+                    -4px -15px 20px aqua;
+            }
+
+            50% {
+                text-shadow: 0 3px 20px blue, 0 0 20px blue,
+                    0 -5px 10px rgb(48, 148, 230),
+                    -2px -5px 5px aqua,
+                    3px -10px 10px aqua,
+                    -4px -15px 20px aqua,
+                    2px -20px 30px rgba(255, 255, 0, 0.5);
+            }
+
+            75% {
+                text-shadow: 0 3px 20px blue, 0 0 20px blue,
+                    0 -5px 10px rgb(48, 148, 230),
+                    3px -5px 5px aqua,
+                    -4px -10px 10px aqua,
+                    2px -20px 30px rgba(255, 255, 0, 0.5),
+                    0px -25px 40px rgba(255, 255, 0, 0)
+            }
+
+            100% {
+                text-shadow: 0 3px 20px blue, 0 0 20px blue,
+                    0 0 10px rgb(48, 148, 230),
+                    0 0 0 aqua,
+                    0 0 5px aqua,
+                    -2px -5px 5px aqua,
+                    4px -10px 10px aqua;
+            }
+        }
+
+        #page {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #myImage {
+            -moz-box-align: center;
+            -webkit-box-align: center;
+            -ms-flex-item-align: center;
+            width: 95%;
+            height: 95%;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: aqua;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        a {
+            color: aqua;
+            font-weight: normal;
+            text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+        }
+
+        ul {
+            text-align: center;
+            list-style-position: inside;
+        }
+
+        .svg-wrapper {
+            height: 60px;
+            margin: 0 auto;
+            position: relative;
+            top: 10%;
+            transform: translateY(-50%);
+            width: 320px;
+        }
+
+        .shape {
+            fill: transparent;
+            stroke-dasharray: 140 540;
+            stroke-dashoffset: -474;
+            stroke-width: 8px;
+            stroke: #00ffff;
+        }
+
+        .text {
+            color: rgb(0, 0, 0);
+            font-family: 'Roboto Condensed';
+            font-size: 22px;
+            letter-spacing: 8px;
+            line-height: 32px;
+            position: relative;
+            top: -48px;
+        }
+
+        @keyframes draw {
+            0% {
+                stroke-dasharray: 140 540;
+                stroke-dashoffset: -474;
+                stroke-width: 8px;
+            }
+
+            100% {
+                stroke-dasharray: 760;
+                stroke-dashoffset: 0;
+                stroke-width: 2px;
+            }
+        }
+
+        .svg-wrapper:hover .shape {
+            -webkit-animation: 0.5s draw linear forwards;
+            animation: 0.5s draw linear forwards;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        label i {
+            font-style: normal;
+            display: inline-block;
+            text-align: right;
+            width: 100px;
+        }
+
+        label textarea {
+            vertical-align: top;
+        }
+
+        button {
+            padding: 5px;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        input,
+        textarea {
+            width: 400px;
+            font-size: 16px;
+            font-family: courier, "courier new", monospace;
+            margin: 0 0 5px 0;
+            padding: 5px;
+            border: 1px solid #eee;
+        }
+
+        select {
+            margin: 0 0 5px 0;
+        }
+
+        @media (min-width:300px) and (max-width: 768px) {
+
+            input,
+            textarea {
+                width: 100%;
+            }
+
+            label i {
+                display: block;
+                width: auto;
+                text-align: left;
+            }
+
+            button {
+                display: block;
+                margin: 0;
+            }
+        }
+    </style>
+
+    <title>Frequency List Word Cloud</title>
+</head>
+
+<body>
+    <center>
+        <div class="dark fire">
+            <h1 class="Blazing" contenteditable="true">Welcome to my page!</h1>
+        </div>
+    </center>
+
+    <!-- Word Bank and Graph With Respect to the Song Lyric's Word Frequencies -->
+
+    <center>
+        <div class="sketchy">
+            <h1 id="demo"> <strong>Eminem - Cleanin' Out My Closet</strong> </h1>
+        </div>
+    </center>
+
+    <br><br>
+
+    <!-- *This is the functionality for setting the song name on the top of the page*
+
+        <div id="myDIV1">
+    <input type="text" id="myText" placeholder="Eminem - Cleanin' Out My Closet">
+
+    <h1></h1>
+
+    <p>Click the "Set Song Title" button to set the title of the song in the text field.</p>
+
+    <button onclick="myFunction()">Set Song Title</button>
+    <br>
+    <br>
+        </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myText").value;
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+
+    *This is the functionality to lead to user to the Lyrics to Text File Tool*
+
+<div id="myDIV2">
+    <hr>
+
+    <br>
+
+    <a href="C:/Users/Roxas/Desktop/Assignment_4/LyricsToFileTool.html"> <font size="6">Lyrics to Text File Tool</font> </a>
+
+    <br>
+    <br>
+
+    <hr>
+</div> -->
+
+    <div id="myDIV3">
+        <center>
+            <img id="myImage" src="C:/Users/Roxas/Desktop/Assignment_4/wordCloud.png" style="border: inset 10px aqua;"
+                alt="wordCloud" align="middle">
+            <script type="text/javascript">
+                document.getElementById("myImage").style.display = "block";
+            </script>
+        </center>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <center>
+        <iframe height="618" width="816" style="border: inset 10px aqua;"
+            src="C:/Users/Roxas/Desktop/Final%20Version/Assignment_4/testoutput/outputa4119cd8-ee08-4261-bd1c-0856dda1046e.html"></iframe>
+    </center>
+
+    <!-- <div id="myDIV4">
+    <br>
+
+    <div>
+        Select a text file:
+        <input type="file" id="fileInput">
+    </div>
+
+</div> -->
+
+    <br>
+
+    <!-- This is the functionality to allow the user to be able to input a file to display, (in this case, my desired output file)
+         (Associated with myDIV4)
+
+        <div><u>(Word Frequency) : (Word)</u></div>
+
+    <pre id="displayFile"></pre>
+
+    <script>
+        var fileInput = document.getElementById('fileInput');
+
+        fileInput.addEventListener('change', function (e) {
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('displayFile').innerText = reader.result;
+            };
+
+            reader.readAsText(file);
+        });
+    </script> -->
+    <hr>
+    <h1 style="font-size: 28px;">(Word Frequency) : (Word)</h1>
+
+    <div id="list">
+        <p>
+            <iframe id="myFrame" src="C:\Users\Roxas\Desktop\Assignment_4\output.txt"
+                style="border: inset 10px aqua; background-color: rgb(223, 223, 223);" frameborder="1" height="550"
+                width="24%"></iframe>
+        </p>
+    </div>
+
+    <!-- This is the functionality to allow the user to click a button in order to hide the serparators, boxes; for the title inputting, user data input, and lyrics to text file tool
+        
+        <button onclick="myHideFunction()">Click to Hide/Show the Clutter</button>
+
+    <script>
+        function myHideFunction() {
+          var x = document.getElementById("myDIV1");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("myDIV2");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+          var x = document.getElementById("myImage");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          }
+          var x = document.getElementById("myDIV4");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+    </script> -->
+
+    <div class="svg-wrapper">
+        <svg height="60" width="320" xmlns="C:/Users/Roxas/Desktop/Assignment_4/MyWriteUp.html">
+            <rect class="shape" height="60" width="320" />
+        </svg>
+        <div class="text"><a href="C:/Users/Roxas/Desktop/Assignment_4/MyWriteUp.html">To My Write Up</a></div>
+    </div>
+
+    <br><br><br>
+
+</body>
+<!--Let's make (word frequency) : (word) appear after clutter is cleared-->
+<!--Click to generate word cloud (start off by hiding (content hide css) then turning on on button click-->
+
+</html>
