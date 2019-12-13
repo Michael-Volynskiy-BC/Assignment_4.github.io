@@ -82,11 +82,11 @@ public class App {
         final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.PIXEL_PERFECT);
         
         wordCloud.setPadding(2);
-        wordCloud.setBackground(new PixelBoundryBackground(/*The absolute path in which your background image is located*/"C:\\Users\\Roxas\\Desktop\\Assignment_4\\wordCloudBackgroundPNG.png"));     // The wordCloudBackgroundPNG is the background image that you want your wordbank output to be placed over
+        wordCloud.setBackground(new PixelBoundryBackground(/*The absolute path in which your background image is located*/"PNG Files\\wordCloudBackgroundPNG.png"));     // The wordCloudBackgroundPNG is the background image that you want your wordbank output to be placed over
         wordCloud.setColorPalette(new ColorPalette(new Color(0x4055F1), new Color(0x408DF1), new Color(0x40AAF1), new Color(0x40C5F1), new Color(0x40D3F1), new Color(0xFFFFFF)));
         wordCloud.setFontScalar(new LinearFontScalar(10, 40));
         wordCloud.build(wordFrequencies);
-        wordCloud.writeToFile(/*The absolute path in which you would want your wordcloud to be located*/"C:\\Users\\Roxas\\Desktop\\Assignment_4\\wordCloud.png");
+        wordCloud.writeToFile(/*The absolute path in which you would want your wordcloud to be located*/"PNG Files\\wordCloud.png");
         System.out.println("App: Excecuted successfully");
     } // end of main method
 
