@@ -79,7 +79,7 @@
             color: aqua;
             font-size: 100px;
             line-height: 50px;
-            min-width: 50px;
+            min-width: 10px;
             outline: none;
             vertical-align: middle;
 
@@ -150,8 +150,9 @@
             -moz-box-align: center;
             -webkit-box-align: center;
             -ms-flex-item-align: center;
-            width: 95%;
-            height: 95%;
+            max-width: 100%;
+            height: auto;
+            width: auto\9; /* ie8 */
         }
 
         h1 {
@@ -388,8 +389,8 @@
     <div id="list">
         <p>
             <iframe id="myFrame" src="output.txt"
-                style="border: inset 10px aqua; background-color: rgb(223, 223, 223);" frameborder="1" height="550"
-                width="24%"></iframe>
+                style="border: inset 10px aqua; background-color: rgb(223, 223, 223);" frameborder="1" height="600"
+                width="400"></iframe>
         </p>
     </div>
 
@@ -431,7 +432,7 @@
         <div class="text"><a href="MyWriteUp.html">To My Write Up</a></div>
     </div>
 
-    <br><br><br>
+    <br><br><br><br><br>
 
 </body>
 <!--Let's make (word frequency) : (word) appear after clutter is cleared-->
