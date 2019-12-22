@@ -4,6 +4,8 @@
 Instructor: Katherine Chuang \
 Brooklyn College
 
+[Preview the webpage here](https://michael-volynskiy-bc.github.io/Assignment_4.github.io/index.html)
+
 
 ## Objectives
 
